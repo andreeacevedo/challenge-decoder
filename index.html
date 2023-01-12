@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image/encripted.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <script src="https://kit.fontawesome.com/963032384d.js" crossorigin="anonymous"></script>    
+    <title>Encriptador</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <section id="logo">
+                <img class="logoImg" src="image/Logo.png">
+                <button class="switch" id="switch" onclick="boton()">
+                    <span><i class="fa-solid fa-sun"></i></span>
+                    <span><i class="fa-solid fa-moon"></i></span>
+                </button>
+            </section>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="encripter">
+                <div class="encripterDiv">
+                    <section id="texto">
+                        <textarea class="txInput" size="100" spellcheck="false" type="text" id="Encriptado" placeholder="Ingrese el texto aquí" autofocus></textarea>
+                        <div class="message" id="message">
+                            <span>!</span><p>Solo letras minúsculas y sin acentos</p>
+                        </div>            
+                    </section>
+                        <div class="button">
+                            <button type="button" id="Encriptar" onclick="encriptar()">Encriptar</button>
+                            <button type="button" id="Desencriptar" onclick="desencriptar()">Desencriptar</button>
+                        </div>
+                </div>
+            
+                <section id="cuadro">
+                    <div class="complete">
+                        <div class="inicio" id="inicio">
+                            <div class="image">
+                                <img src="image/Muñeco.png" id="imgMun">
+                            </div>
+                            <p id="muntxt">Ningun mensaje fue encontrado</p>
+                            <p id="parraf">Ingresa el texto que deseas encriptar</p>
+                        </div>
+
+                        <div class="result" id="result">
+                            <textarea name="resultado" spellcheck="false" id="Desencriptado"></textarea>
+                            <button type="button" id="copy" onclick="copy()">Copiar</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-center">
+            <p>Diseñado por <a href="https://www.aluracursos.com/" target="__blank">AluraLATAM</a> y elaborado por <a href="https://github.com/andreeacevedo" target="__blank">Andrea Acevedo</a></p>
+          </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>

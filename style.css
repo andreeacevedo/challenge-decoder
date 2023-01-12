@@ -1,0 +1,495 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma;
+    background: #f2e9e4;
+    font-weight: 400;
+}
+body.dark{
+    background: #111111;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+/*---------------------header---------------------*/
+header{
+    background: transparent;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+}
+
+header .logo{
+    margin-top: 4px;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+header .switch{
+    display: flex;
+    margin-top: 10px;
+    margin-right: 40px;
+    align-items: flex-end;
+}
+
+/*------------------------switch DarkMode------------------------*/
+.switch{
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    float: right;
+    align-items: flex-end;
+}
+.switch::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.switch.active{
+    background: orange;
+    color: #000;
+}
+.switch.active::after{
+    right: 0;
+    left: unset;
+}
+
+.switch span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+}
+
+/*------------------------lado Encriptar------------------------*/
+
+.left{
+    float: left;
+    width: 70%;
+    height: 70%;
+    border-radius: 24px;
+    background: transparent;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.txInput{
+    float: left;
+    flex-basis: 100%;
+    margin-top: 1em;
+    margin-left: 10%;
+    width: 85%;
+    height: 100%;
+    font-family: Tahoma;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background: transparent;
+    resize: none;
+    text-align: justify;
+    color: #4a4e69;
+}
+
+.dark .txInput{
+    color: white;
+
+}/*-------------*/
+.encripter{
+    margin: 0 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.encripterDiv{
+    flex-basis: calc(65% - 80px);
+}
+
+#texto{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.txInput:focus{
+    outline: none
+}
+
+.txInput::-webkit-input-placeholder {
+    color: #c9ada7;
+}
+
+.dark .txInput::-webkit-input-placeholder {
+    color: gray;
+}
+
+.texto_info{
+    width: 100%;
+    position: relative;
+}
+
+
+/*------------------------advertencia------------------------*/
+.message {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 20px 0;
+    user-select: none;
+}
+  
+.message span {
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #495057;
+    font-size: 0.87rem;
+    font-weight: 700;
+    color: #CED4DA;
+    transition: all .2s ease-in-out;
+}
+  
+.message p {
+    color: #495057;
+    font-weight: 400;
+    font-size: .9rem;
+    transition: all .2s ease-in-out;
+}
+
+.dark .message p{
+    color: #CED4DA;
+}
+
+/*------------------------botones------------------------*/
+.button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#Encriptar{
+    position: relative;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,0.5);
+    background-color: #22223b;
+    width: 200px;
+    border-radius: 24px;
+    color: white;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+#Encriptar:hover{
+    background-color: #18182b;
+    
+}
+
+#Encriptar:active{
+    transform: scale(0.9);
+}
+
+
+.dark #Encriptar{
+    background-color: #92DCE5;
+    color: #000;
+}
+
+.dark #Encriptar:hover{
+    background-color: #79c7d1;
+}
+
+#Desencriptar{
+    padding: 20px;
+    border: 1px solid #22223b;
+    background-color: #9a8c98;
+    width: 200px;
+    border-radius: 24px;
+    margin-left: 10%;
+    color: black;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    position: relative;
+}
+
+#Desencriptar:hover{
+    background-color: #837881;
+}
+
+#Desencriptar:active{
+    transform: scale(0.9);
+}
+
+.dark #Desencriptar{
+    color: white;
+    border: 1px solid #92DCE5;
+    background-color: #2a3035;
+}
+
+.dark #Desencriptar:hover{
+    background-color: #22282c;
+}
+
+.result button {
+    bottom: 50px;
+    padding: 20px;
+    position: relative;
+    top: 90px;
+    width: 60%;
+    background: #9a8c98;
+    border-radius: 25px ;
+    border: 1px solid #22223b;
+    color: black;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#copy:hover{
+    background-color: #837881;
+}
+
+#copy:active{
+    transform: scale(0.9);
+}
+
+.dark #copy{
+    color: white;
+    border: 1px solid #92DCE5;
+    background-color: #2a3035;
+}
+
+.dark #copy:hover{
+    background-color: #22282c;
+}
+/*----------------------*/
+#cuadro {
+    height: 730px;
+    width: 100%;
+    margin: 40px 40px;
+    flex-basis: calc(35% - 80px);
+}
+
+.complete {
+    width: 90%;
+    min-width: 300px;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(77, 75, 75, 0.2);
+    
+ }
+
+ 
+.image {
+    width: 270px;
+    height: 300px;
+    display: block;
+    margin: auto;
+}
+
+.image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    filter: saturate(70%);
+}
+
+
+.result {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.complete p:nth-child(2) {
+    text-align: center;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.complete p:nth-child(3) {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+}
+
+#Desencriptado {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    right: 25px;
+    height: 85%;
+    resize: none;
+    border: none;
+    background: transparent;
+    font-family: Tahoma;
+    text-align: justify;
+}
+
+.dark .complete{
+    background: #222222;
+    box-shadow: 2px 2px 10px rgba(167, 167, 167, 0.2);
+}
+
+#parraf{
+    text-align: center;
+}
+
+.dark #parraf{
+    color: white;
+}
+
+.dark #Desencriptado{
+    color: #f1f1f1;
+}
+.dark #muntxt{
+    color: #f1f1f1;
+}
+
+/*------------------------footer------------------------*/
+.footer-container {
+    width: 70%;
+    margin: auto;
+}
+  
+.footer-center {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    padding: 0 0 15px 0;
+    margin-top: 100px;
+}
+  
+.footer-center p {
+    color: #495057;
+    font-size: .9rem;
+}
+
+.dark .footer-center p{
+    color: #CED4DA;
+}
+  
+.footer-center a {
+    transition: all .2s ease;
+}
+  
+.footer-center p a:visited {
+    color: #495057;
+}
+
+.dark .footer-center p a:visited{
+    color: #CED4DA;
+}
+  
+.footer-center p a:hover {
+    color:#634B66;
+}
+
+.dark .footer-center p a:hover{
+    color: #92DCE5;
+}
+
+.footer-center p a:active {
+    color: #634B66;
+}
+
+.dark .footer-center p a:active{
+    color: #92DCE5;
+}
+
+@media screen and (max-width: 860px){
+    
+    .encriptador {
+        margin: 0;
+    }
+
+    #texto{
+        height: 700px;
+    }
+    .message p {
+        font-size: 12px;
+    }
+
+    #cuadro {
+        height: 100%;
+        
+    }
+
+    .complete {
+        width: 550px;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .result button {
+        top: 0px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .txInput {
+        font-size: 25px;
+    }
+    .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #Encriptar {
+        width: 90%;
+    }
+    #Desencriptar {
+        width: 90%;
+        margin: 0;
+    }
+
+    .complete {
+        width: 320px;
+        
+    }
+}
